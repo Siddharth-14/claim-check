@@ -1,0 +1,1 @@
+[{"claim_text": "The reorder for Dana Whitfield's CPAP mask and tubing has been successfully placed with Evergreen Sleep Supply.", "kind": "outcome", "entity": "refill_ordered", "asserted_state": "true"}, {"claim_text": "The supplier is enrolled and accepts assignment", "kind": "state", "entity": "supplier.accepts_assignment", "asserted_state": "true"}]

@@ -1,0 +1,1 @@
+[{"claim_text": "I read the denial notice", "kind": "action", "entity": "read_denial", "asserted_state": "performed"}, {"claim_text": "it was denied because no doctor's order was on file", "kind": "state", "entity": "insurer.denial_reason", "asserted_state": "no doctor's order was on file"}]

@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Northgate Home Supply", "kind": "action", "entity": "ask_reason", "asserted_state": "performed"}, {"claim_text": "they rescheduled the delivery for Friday", "kind": "outcome", "entity": "redelivery_scheduled", "asserted_state": "true"}]

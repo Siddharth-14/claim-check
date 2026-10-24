@@ -1,0 +1,1 @@
+[{"claim_text": "Wendell told his cost share", "kind": "outcome", "entity": "patient_informed_cost", "asserted_state": "true"}, {"claim_text": "bed ordered on the chosen basis", "kind": "outcome", "entity": "bed_ordered", "asserted_state": "true"}]

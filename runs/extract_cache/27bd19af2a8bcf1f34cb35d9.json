@@ -1,0 +1,1 @@
+[{"claim_text": "The repair visit for Ivan Petrov's wheelchair has been scheduled for Wednesday morning.", "kind": "outcome", "entity": "repair_scheduled", "asserted_state": "true"}, {"claim_text": "A technician will arrive to fix the broken wheel.", "kind": "state", "entity": "supplier.equipment_status", "asserted_state": "true"}]

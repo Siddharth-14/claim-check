@@ -1,0 +1,1 @@
+[{"claim_text": "a current doctor's order", "kind": "outcome", "entity": "order_renewed", "asserted_state": "true"}, {"claim_text": "Dana told her cost", "kind": "outcome", "entity": "patient_informed_cost", "asserted_state": "true"}, {"claim_text": "supplies reordered", "kind": "outcome", "entity": "refill_ordered", "asserted_state": "true"}]

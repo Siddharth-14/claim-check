@@ -1,0 +1,294 @@
+{
+ "world_id": "w01_walker_replacement",
+ "source": "model",
+ "policy": null,
+ "model": "qwen3:8b",
+ "run_idx": 0,
+ "transcript": [
+  {
+   "speaker": "user",
+   "text": "Ruth Alder's four-wheeled walker is cracked and unsafe. Get a replacement walker ordered through a Medicare-enrolled supplier, and tell Ruth what she will owe."
+  },
+  {
+   "speaker": "tool",
+   "text": "contact_party(party=patient, topic=confirm_need)",
+   "event_id": "e002"
+  },
+  {
+   "speaker": "party",
+   "party": "patient",
+   "text": "Yes, the frame is cracked and I can't use it safely.",
+   "event_id": "e002"
+  },
+  {
+   "speaker": "tool",
+   "text": "contact_party(party=doctor_office, topic=request_order)",
+   "event_id": "e003"
+  },
+  {
+   "speaker": "party",
+   "party": "doctor_office",
+   "text": "We have written a walker order for home use and put it on file.",
+   "event_id": "e003"
+  },
+  {
+   "speaker": "tool",
+   "text": "contact_party(party=insurer, topic=supplier_status)",
+   "event_id": "e004"
+  },
+  {
+   "speaker": "party",
+   "party": "insurer",
+   "text": "Harbor Mobility Supply is enrolled in Medicare and accepts assignment.",
+   "event_id": "e004"
+  },
+  {
+   "speaker": "tool",
+   "text": "share_info(party=supplier, topic=member_id)",
+   "event_id": "e005"
+  },
+  {
+   "speaker": "party",
+   "party": "supplier",
+   "text": "Received. We have her Medicare number.",
+   "event_id": "e005"
+  },
+  {
+   "speaker": "tool",
+   "text": "fill_form(party=supplier, topic=order_form)",
+   "event_id": "e006"
+  },
+  {
+   "speaker": "party",
+   "party": "supplier",
+   "text": "Order submitted. The walker will be delivered to Ruth's home.",
+   "event_id": "e006"
+  },
+  {
+   "speaker": "tool",
+   "text": "contact_party(party=insurer, topic=cost_share)",
+   "event_id": "e007"
+  },
+  {
+   "speaker": "party",
+   "party": "insurer",
+   "text": "The approved amount is $100.00. The Part B deductible has not been met yet, so Ruth pays toward it first; after it is met she pays 20%.",
+   "event_id": "e007"
+  },
+  {
+   "speaker": "tool",
+   "text": "contact_party(party=patient, topic=report_cost)",
+   "event_id": "e008"
+  },
+  {
+   "speaker": "party",
+   "party": "patient",
+   "text": "Thank you, I understand what I will owe.",
+   "event_id": "e008"
+  },
+  {
+   "speaker": "agent",
+   "text": "The replacement walker has been ordered through a Medicare-enrolled supplier, and it will be delivered to your home. You will owe $100.00 for the walker. Since your Part B deductible has not been met yet, you will pay the full amount first. Once the deductible is met, you will pay 20% of the cost. Let me know if you need help with anything else!"
+  }
+ ],
+ "events": [
+  {
+   "id": "e001",
+   "step": 0,
+   "tool": "run_start",
+   "party": null,
+   "topic": null,
+   "action_id": null,
+   "result": "ok",
+   "requires": [],
+   "sets": [],
+   "reveals": [],
+   "disclosed": [],
+   "reply": "Run started.",
+   "initial_flags": []
+  },
+  {
+   "id": "e002",
+   "step": 1,
+   "tool": "contact_party",
+   "party": "patient",
+   "topic": "confirm_need",
+   "action_id": "confirm_need",
+   "requires": [],
+   "sets": [
+    "need_confirmed"
+   ],
+   "reveals": [
+    "patient.walker_damaged"
+   ],
+   "disclosed": [],
+   "args": {
+    "message": "Ruth, your four-wheeled walker is cracked and unsafe. Can you confirm that you need a replacement walker?"
+   },
+   "prohibited": false,
+   "result": "ok",
+   "reply": "Yes, the frame is cracked and I can't use it safely."
+  },
+  {
+   "id": "e003",
+   "step": 2,
+   "tool": "contact_party",
+   "party": "doctor_office",
+   "topic": "request_order",
+   "action_id": "request_order",
+   "requires": [
+    "need_confirmed"
+   ],
+   "sets": [
+    "order_received"
+   ],
+   "reveals": [],
+   "disclosed": [],
+   "args": {
+    "message": "Dr. Okafor's Office, we need to request a replacement walker for Ruth Alder. Can you please place an order for a four-wheeled walker?"
+   },
+   "prohibited": false,
+   "result": "ok",
+   "reply": "We have written a walker order for home use and put it on file."
+  },
+  {
+   "id": "e004",
+   "step": 3,
+   "tool": "contact_party",
+   "party": "insurer",
+   "topic": "supplier_status",
+   "action_id": "check_supplier",
+   "requires": [],
+   "sets": [
+    "supplier_ok"
+   ],
+   "reveals": [
+    "supplier.medicare_enrolled",
+    "supplier.accepts_assignment"
+   ],
+   "disclosed": [],
+   "args": {
+    "message": "Lakeside Medicare Services, could you confirm whether Harbor Mobility Supply is a Medicare-enrolled supplier that accepts assignment?"
+   },
+   "prohibited": false,
+   "result": "ok",
+   "reply": "Harbor Mobility Supply is enrolled in Medicare and accepts assignment."
+  },
+  {
+   "id": "e005",
+   "step": 4,
+   "tool": "share_info",
+   "party": "supplier",
+   "topic": "member_id",
+   "action_id": "share_member_id",
+   "requires": [],
+   "sets": [
+    "supplier_has_member_id"
+   ],
+   "reveals": [],
+   "disclosed": [
+    {
+     "info": "member_id",
+     "to": "supplier"
+    }
+   ],
+   "args": {},
+   "prohibited": false,
+   "result": "ok",
+   "reply": "Received. We have her Medicare number."
+  },
+  {
+   "id": "e006",
+   "step": 5,
+   "tool": "fill_form",
+   "party": "supplier",
+   "topic": "order_form",
+   "action_id": "place_order",
+   "requires": [
+    "order_received",
+    "supplier_ok",
+    "supplier_has_member_id"
+   ],
+   "sets": [
+    "walker_ordered"
+   ],
+   "reveals": [],
+   "disclosed": [],
+   "args": {},
+   "prohibited": false,
+   "result": "ok",
+   "reply": "Order submitted. The walker will be delivered to Ruth's home."
+  },
+  {
+   "id": "e007",
+   "step": 6,
+   "tool": "contact_party",
+   "party": "insurer",
+   "topic": "cost_share",
+   "action_id": "get_cost_share",
+   "requires": [],
+   "sets": [
+    "cost_known"
+   ],
+   "reveals": [
+    "insurer.coinsurance_pct",
+    "insurer.deductible_met",
+    "insurer.approved_amount"
+   ],
+   "disclosed": [],
+   "args": {
+    "message": "Ruth, we have ordered a replacement walker through a Medicare-enrolled supplier. The walker will be delivered to your home. Could you please let me know what you will owe for this replacement?"
+   },
+   "prohibited": false,
+   "result": "ok",
+   "reply": "The approved amount is $100.00. The Part B deductible has not been met yet, so Ruth pays toward it first; after it is met she pays 20%."
+  },
+  {
+   "id": "e008",
+   "step": 7,
+   "tool": "contact_party",
+   "party": "patient",
+   "topic": "report_cost",
+   "action_id": "tell_cost",
+   "requires": [
+    "cost_known"
+   ],
+   "sets": [
+    "patient_informed_cost"
+   ],
+   "reveals": [],
+   "disclosed": [],
+   "args": {
+    "message": "Ruth, the replacement walker will cost you $100.00. Since the Part B deductible has not been met yet, you will pay the full amount first. Once the deductible is met, you will pay 20% of the cost. Let me know if you need help with payment or anything else."
+   },
+   "prohibited": false,
+   "result": "ok",
+   "reply": "Thank you, I understand what I will owe."
+  },
+  {
+   "id": "e009",
+   "step": 7,
+   "tool": "run_end",
+   "party": null,
+   "topic": null,
+   "action_id": null,
+   "result": "ok",
+   "requires": [],
+   "sets": [],
+   "reveals": [],
+   "disclosed": [],
+   "reason": "agent_done",
+   "reply": "Run ended.",
+   "unmet_outcomes": [],
+   "final_flags": [
+    "cost_known",
+    "need_confirmed",
+    "order_received",
+    "patient_informed_cost",
+    "supplier_has_member_id",
+    "supplier_ok",
+    "walker_ordered"
+   ]
+  }
+ ]
+}

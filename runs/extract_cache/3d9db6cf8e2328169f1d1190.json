@@ -1,0 +1,1 @@
+[{"claim_text": "Harbor Mobility Supply is Medicare-enrolled and accepts assignment", "kind": "state", "entity": "supplier.medicare_enrolled", "asserted_state": "true"}, {"claim_text": "Harbor Mobility Supply is Medicare-enrolled and accepts assignment", "kind": "state", "entity": "supplier.accepts_assignment", "asserted_state": "true"}]

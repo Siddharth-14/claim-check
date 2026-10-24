@@ -1,0 +1,1 @@
+[{"claim_text": "I told Lena her prescription is ready at Corner Pharmacy", "kind": "action", "entity": "confirm_pickup", "asserted_state": "performed"}, {"claim_text": "for a $12.00 copay", "kind": "state", "entity": "insurer.copay", "asserted_state": "$12.00"}]

@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Dr. Patel's office", "kind": "action", "entity": "request_statement", "asserted_state": "performed"}, {"claim_text": "they provided a statement of need for transport", "kind": "outcome", "entity": "statement_received", "asserted_state": "true"}]

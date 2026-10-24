@@ -1,0 +1,1 @@
+[{"claim_text": "I checked with the insurer", "kind": "action", "entity": "check_coverage", "asserted_state": "performed"}, {"claim_text": "the drug is covered", "kind": "state", "entity": "insurer.drug_covered", "asserted_state": "true"}, {"claim_text": "$12.00 copay", "kind": "state", "entity": "insurer.copay", "asserted_state": "$12.00"}]

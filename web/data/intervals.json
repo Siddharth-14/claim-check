@@ -1,0 +1,452 @@
+{
+ "method": "Wilson score 95% interval",
+ "n_runs_per_model": 141,
+ "n_tasks": 47,
+ "source": "https://www.callbaba.com/bench/ (results CSV, retrieved 2026-10-24)",
+ "limitations": "Aggregates only: the page publishes no per-task or per-run results, so no bootstrap over tasks was possible. Pass-rate intervals treat the 141 runs per model as independent; runs within a task are correlated, so these intervals are optimistic (too narrow). The 141 figure is derived (47 tasks x 3 runs), not stated on the page. Pass^3 intervals use n=47 tasks. Interval overlap is a coarse screen, not a significance test.",
+ "models": [
+  {
+   "model": "Claude Opus 5",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 52.5,
+    "k": 74,
+    "n": 141,
+    "lo": 44.3,
+    "hi": 60.5,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 27.7,
+    "k": 13,
+    "n": 47,
+    "lo": 16.9,
+    "hi": 41.8,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "Grok 4.6",
+   "reasoning": "High",
+   "pass_rate": {
+    "published": 52.5,
+    "k": 74,
+    "n": 141,
+    "lo": 44.3,
+    "hi": 60.5,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 38.3,
+    "k": 18,
+    "n": 47,
+    "lo": 25.8,
+    "hi": 52.6,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "GPT-5.6 Sol",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 49.6,
+    "k": 70,
+    "n": 141,
+    "lo": 41.5,
+    "hi": 57.8,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 31.9,
+    "k": 15,
+    "n": 47,
+    "lo": 20.4,
+    "hi": 46.2,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "GPT-5.6 Terra",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 46.1,
+    "k": 65,
+    "n": 141,
+    "lo": 38.1,
+    "hi": 54.3,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 36.2,
+    "k": 17,
+    "n": 47,
+    "lo": 24.0,
+    "hi": 50.5,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "Meta MuseSpark 1.2",
+   "reasoning": "High",
+   "pass_rate": {
+    "published": 44.0,
+    "k": 62,
+    "n": 141,
+    "lo": 36.0,
+    "hi": 52.2,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 31.9,
+    "k": 15,
+    "n": 47,
+    "lo": 20.4,
+    "hi": 46.2,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "GPT-5.6 Luna",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 36.9,
+    "k": 52,
+    "n": 141,
+    "lo": 29.4,
+    "hi": 45.1,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 17.0,
+    "k": 8,
+    "n": 47,
+    "lo": 8.9,
+    "hi": 30.1,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "Gemini 3.7 Flash",
+   "reasoning": "High",
+   "pass_rate": {
+    "published": 29.8,
+    "k": 42,
+    "n": 141,
+    "lo": 22.9,
+    "hi": 37.8,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 14.9,
+    "k": 7,
+    "n": 47,
+    "lo": 7.4,
+    "hi": 27.7,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "Gemini 3.1 Pro Preview",
+   "reasoning": "High",
+   "pass_rate": {
+    "published": 14.2,
+    "k": 20,
+    "n": 141,
+    "lo": 9.4,
+    "hi": 20.9,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 8.5,
+    "k": 4,
+    "n": 47,
+    "lo": 3.4,
+    "hi": 19.9,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "Claude Haiku 4.5",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 6.4,
+    "k": 9,
+    "n": 141,
+    "lo": 3.4,
+    "hi": 11.7,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 2.1,
+    "k": 1,
+    "n": 47,
+    "lo": 0.4,
+    "hi": 11.1,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "Inkling",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 5.7,
+    "k": 8,
+    "n": 141,
+    "lo": 2.9,
+    "hi": 10.8,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 0.0,
+    "k": 0,
+    "n": 47,
+    "lo": 0.0,
+    "hi": 7.6,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "DeepSeek V4 Pro",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 48.9,
+    "k": 69,
+    "n": 141,
+    "lo": 40.8,
+    "hi": 57.1,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 29.8,
+    "k": 14,
+    "n": 47,
+    "lo": 18.7,
+    "hi": 44.0,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "Kimi K3",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 36.9,
+    "k": 52,
+    "n": 141,
+    "lo": 29.4,
+    "hi": 45.1,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 19.1,
+    "k": 9,
+    "n": 47,
+    "lo": 10.4,
+    "hi": 32.5,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "GLM-5.2",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 32.6,
+    "k": 46,
+    "n": 141,
+    "lo": 25.4,
+    "hi": 40.7,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 14.9,
+    "k": 7,
+    "n": 47,
+    "lo": 7.4,
+    "hi": 27.7,
+    "reproduces": true
+   }
+  },
+  {
+   "model": "MiniMax M3",
+   "reasoning": "Max",
+   "pass_rate": {
+    "published": 17.0,
+    "k": 24,
+    "n": 141,
+    "lo": 11.7,
+    "hi": 24.1,
+    "reproduces": true
+   },
+   "pass3": {
+    "published": 4.3,
+    "k": 2,
+    "n": 47,
+    "lo": 1.2,
+    "hi": 14.2,
+    "reproduces": true
+   }
+  }
+ ],
+ "adjacent_pairs": {
+  "pass_rate": [
+   {
+    "a": "Claude Opus 5",
+    "b": "Grok 4.6",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for Claude Opus 5 (44.3-60.5%) and Grok 4.6 (44.3-60.5%) overlap."
+   },
+   {
+    "a": "Grok 4.6",
+    "b": "GPT-5.6 Sol",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for Grok 4.6 (44.3-60.5%) and GPT-5.6 Sol (41.5-57.8%) overlap."
+   },
+   {
+    "a": "GPT-5.6 Sol",
+    "b": "DeepSeek V4 Pro",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for GPT-5.6 Sol (41.5-57.8%) and DeepSeek V4 Pro (40.8-57.1%) overlap."
+   },
+   {
+    "a": "DeepSeek V4 Pro",
+    "b": "GPT-5.6 Terra",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for DeepSeek V4 Pro (40.8-57.1%) and GPT-5.6 Terra (38.1-54.3%) overlap."
+   },
+   {
+    "a": "GPT-5.6 Terra",
+    "b": "Meta MuseSpark 1.2",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for GPT-5.6 Terra (38.1-54.3%) and Meta MuseSpark 1.2 (36.0-52.2%) overlap."
+   },
+   {
+    "a": "Meta MuseSpark 1.2",
+    "b": "GPT-5.6 Luna",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for Meta MuseSpark 1.2 (36.0-52.2%) and GPT-5.6 Luna (29.4-45.1%) overlap."
+   },
+   {
+    "a": "GPT-5.6 Luna",
+    "b": "Kimi K3",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for GPT-5.6 Luna (29.4-45.1%) and Kimi K3 (29.4-45.1%) overlap."
+   },
+   {
+    "a": "Kimi K3",
+    "b": "GLM-5.2",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for Kimi K3 (29.4-45.1%) and GLM-5.2 (25.4-40.7%) overlap."
+   },
+   {
+    "a": "GLM-5.2",
+    "b": "Gemini 3.7 Flash",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for GLM-5.2 (25.4-40.7%) and Gemini 3.7 Flash (22.9-37.8%) overlap."
+   },
+   {
+    "a": "Gemini 3.7 Flash",
+    "b": "MiniMax M3",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for Gemini 3.7 Flash (22.9-37.8%) and MiniMax M3 (11.7-24.1%) overlap."
+   },
+   {
+    "a": "MiniMax M3",
+    "b": "Gemini 3.1 Pro Preview",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for MiniMax M3 (11.7-24.1%) and Gemini 3.1 Pro Preview (9.4-20.9%) overlap."
+   },
+   {
+    "a": "Gemini 3.1 Pro Preview",
+    "b": "Claude Haiku 4.5",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for Gemini 3.1 Pro Preview (9.4-20.9%) and Claude Haiku 4.5 (3.4-11.7%) overlap."
+   },
+   {
+    "a": "Claude Haiku 4.5",
+    "b": "Inkling",
+    "overlap": true,
+    "sentence": "Pass Rate: the 95% intervals for Claude Haiku 4.5 (3.4-11.7%) and Inkling (2.9-10.8%) overlap."
+   }
+  ],
+  "pass3": [
+   {
+    "a": "Grok 4.6",
+    "b": "GPT-5.6 Terra",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for Grok 4.6 (25.8-52.6%) and GPT-5.6 Terra (24.0-50.5%) overlap."
+   },
+   {
+    "a": "GPT-5.6 Terra",
+    "b": "GPT-5.6 Sol",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for GPT-5.6 Terra (24.0-50.5%) and GPT-5.6 Sol (20.4-46.2%) overlap."
+   },
+   {
+    "a": "GPT-5.6 Sol",
+    "b": "Meta MuseSpark 1.2",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for GPT-5.6 Sol (20.4-46.2%) and Meta MuseSpark 1.2 (20.4-46.2%) overlap."
+   },
+   {
+    "a": "Meta MuseSpark 1.2",
+    "b": "DeepSeek V4 Pro",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for Meta MuseSpark 1.2 (20.4-46.2%) and DeepSeek V4 Pro (18.7-44.0%) overlap."
+   },
+   {
+    "a": "DeepSeek V4 Pro",
+    "b": "Claude Opus 5",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for DeepSeek V4 Pro (18.7-44.0%) and Claude Opus 5 (16.9-41.8%) overlap."
+   },
+   {
+    "a": "Claude Opus 5",
+    "b": "Kimi K3",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for Claude Opus 5 (16.9-41.8%) and Kimi K3 (10.4-32.5%) overlap."
+   },
+   {
+    "a": "Kimi K3",
+    "b": "GPT-5.6 Luna",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for Kimi K3 (10.4-32.5%) and GPT-5.6 Luna (8.9-30.1%) overlap."
+   },
+   {
+    "a": "GPT-5.6 Luna",
+    "b": "GLM-5.2",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for GPT-5.6 Luna (8.9-30.1%) and GLM-5.2 (7.4-27.7%) overlap."
+   },
+   {
+    "a": "GLM-5.2",
+    "b": "Gemini 3.7 Flash",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for GLM-5.2 (7.4-27.7%) and Gemini 3.7 Flash (7.4-27.7%) overlap."
+   },
+   {
+    "a": "Gemini 3.7 Flash",
+    "b": "Gemini 3.1 Pro Preview",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for Gemini 3.7 Flash (7.4-27.7%) and Gemini 3.1 Pro Preview (3.4-19.9%) overlap."
+   },
+   {
+    "a": "Gemini 3.1 Pro Preview",
+    "b": "MiniMax M3",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for Gemini 3.1 Pro Preview (3.4-19.9%) and MiniMax M3 (1.2-14.2%) overlap."
+   },
+   {
+    "a": "MiniMax M3",
+    "b": "Claude Haiku 4.5",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for MiniMax M3 (1.2-14.2%) and Claude Haiku 4.5 (0.4-11.1%) overlap."
+   },
+   {
+    "a": "Claude Haiku 4.5",
+    "b": "Inkling",
+    "overlap": true,
+    "sentence": "Pass^3: the 95% intervals for Claude Haiku 4.5 (0.4-11.1%) and Inkling (0.0-7.6%) overlap."
+   }
+  ]
+ },
+ "count_check_mismatches": []
+}

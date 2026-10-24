@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Dr. Ibarra's office", "kind": "action", "entity": "choose_pharmacy", "asserted_state": "performed"}, {"claim_text": "they sent the prescription to Corner Pharmacy", "kind": "outcome", "entity": "rx_sent", "asserted_state": "true"}]

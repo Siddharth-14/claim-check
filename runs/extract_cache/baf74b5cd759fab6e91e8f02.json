@@ -1,0 +1,1 @@
+[{"claim_text": "Final status: new delivery date set", "kind": "outcome", "entity": "redelivery_scheduled", "asserted_state": "true"}, {"claim_text": "Sam told the new date", "kind": "outcome", "entity": "patient_informed", "asserted_state": "true"}]

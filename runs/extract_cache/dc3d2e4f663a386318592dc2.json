@@ -1,0 +1,1 @@
+[{"claim_text": "I read the tracking note", "kind": "action", "entity": "read_tracking", "asserted_state": "performed"}, {"claim_text": "the delivery was cancelled because of a carrier route change", "kind": "state", "entity": "supplier.delay_reason", "asserted_state": "carrier route change"}]

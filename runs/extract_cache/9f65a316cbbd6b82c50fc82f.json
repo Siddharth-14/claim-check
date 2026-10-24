@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Wendell and he chose to rent the bed.", "kind": "action", "entity": "ask_choice", "asserted_state": "performed"}, {"claim_text": "he chose to rent the bed", "kind": "outcome", "entity": "patient.choice", "asserted_state": "rent"}]

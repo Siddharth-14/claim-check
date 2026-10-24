@@ -1,0 +1,1 @@
+[{"claim_text": "I read the appointment letter", "kind": "action", "entity": "read_letter", "asserted_state": "performed"}, {"claim_text": "the consult is next Thursday at 10:00", "kind": "state", "entity": "patient.appointment_date", "asserted_state": "next Thursday at 10:00"}]

@@ -1,0 +1,1 @@
+[{"claim_text": "prescription sent to the pharmacy", "kind": "outcome", "entity": "rx_sent", "asserted_state": "true"}, {"claim_text": "Lena told the pickup time and cost", "kind": "outcome", "entity": "pickup_arranged", "asserted_state": "true"}]

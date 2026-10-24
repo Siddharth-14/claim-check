@@ -1,0 +1,1 @@
+[{"claim_text": "I read the discharge instructions", "kind": "action", "entity": "read_instructions", "asserted_state": "performed"}, {"claim_text": "a follow-up is needed within 7 days", "kind": "state", "entity": "doctor_office.followup_window_days", "asserted_state": "7"}]

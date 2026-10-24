@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Dr. Alvarez's office", "kind": "action", "entity": "renew_order", "asserted_state": "not_performed"}, {"claim_text": "they issued a new CPAP supplies order", "kind": "outcome", "entity": "order_renewed", "asserted_state": "true"}]

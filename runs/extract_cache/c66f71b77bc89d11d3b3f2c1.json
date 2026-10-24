@@ -1,0 +1,1 @@
+[{"claim_text": "I waited", "kind": "action", "entity": "wait_summary", "asserted_state": "performed"}, {"claim_text": "the summary arrived", "kind": "outcome", "entity": "summary_received", "asserted_state": "true"}]

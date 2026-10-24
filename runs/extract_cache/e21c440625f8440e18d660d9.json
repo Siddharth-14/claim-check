@@ -1,0 +1,1 @@
+[{"claim_text": "Your ride has been booked for next Thursday at 10:00 AM to the dialysis clinic.", "kind": "outcome", "entity": "ride_booked", "asserted_state": "true"}, {"claim_text": "You will owe $16.00 for the ride.", "kind": "state", "entity": "patient.cost_owed", "asserted_state": "$16.00"}]

@@ -1,0 +1,1 @@
+[{"claim_text": "I asked the insurer", "kind": "action", "entity": "resubmit", "asserted_state": "not_performed"}, {"claim_text": "they resubmitted the claim for reprocessing", "kind": "outcome", "entity": "claim_resubmitted", "asserted_state": "true"}]

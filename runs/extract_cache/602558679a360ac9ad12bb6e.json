@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Northgate Home Supply", "kind": "action", "entity": "ask_reason", "asserted_state": "performed"}, {"claim_text": "the delay was caused by a carrier route change", "kind": "state", "entity": "supplier.delay_reason", "asserted_state": "carrier route change"}]

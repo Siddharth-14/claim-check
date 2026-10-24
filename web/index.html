@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim Check</title>
+<meta name="description" content="Checks whether what an AI patient-advocacy agent says it did matches the log of what actually happened in a simulated case.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the audit</a>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Claim Check</h1>
+    <p class="problem">An AI agent can say “done” when the log says otherwise. This compares what each agent claims with what happened in a simulated care case.</p>
+    <p class="meta">
+      Independent project, not affiliated with Baba.
+      Inspired by <a href="https://www.callbaba.com/bench/" rel="noopener">BabaBench</a>; no tasks or branding are copied.
+      <a href="https://github.com/Siddharth-14/claim-check" rel="noopener">Code and data on GitHub</a>.
+    </p>
+  </div>
+</header>
+
+<div class="tabbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" id="t-audit" aria-controls="p-audit" aria-selected="true">Audit a run</button>
+      <button role="tab" id="t-gap" aria-controls="p-gap" aria-selected="false" tabindex="-1">Is the gap real?</button>
+      <button role="tab" id="t-acc" aria-controls="p-acc" aria-selected="false" tabindex="-1">Checker accuracy</button>
+    </div>
+  </div>
+</div>
+
+<main id="main" class="wrap">
+
+  <section id="p-audit" role="tabpanel" aria-labelledby="t-audit">
+    <div class="casebar">
+      <label>Case
+        <select id="sel-world"></select>
+      </label>
+      <label>Agent run
+        <select id="sel-run"></select>
+      </label>
+      <p id="agent-note" class="agent-note"></p>
+    </div>
+
+    <div id="result" class="result" aria-live="polite"></div>
+    <div id="scorecard" class="scorecard" role="list" aria-label="Four grading criteria"></div>
+
+    <div class="panes">
+      <section class="pane ledger-pane" aria-labelledby="h-ledger">
+        <h2 id="h-ledger">Claim ledger</h2>
+        <p class="hint">Each claim the agent made, checked against the event log.</p>
+        <div id="ledger"></div>
+      </section>
+      <section class="pane transcript-pane" aria-labelledby="h-transcript">
+        <h2 id="h-transcript">Transcript</h2>
+        <p class="hint">Underlined text is a claim the checker could not support.</p>
+        <div id="transcript"></div>
+      </section>
+    </div>
+  </section>
+
+  <section id="p-gap" role="tabpanel" aria-labelledby="t-gap" hidden>
+    <h2 class="big">Most neighbouring models cannot be told apart from this table</h2>
+    <p id="gap-lede" class="lede"></p>
+    <div class="charts">
+      <figure><figcaption id="cap-pr"></figcaption><div id="chart-pr" class="chart"></div></figure>
+      <figure><figcaption id="cap-p3"></figcaption><div id="chart-p3" class="chart"></div></figure>
+    </div>
+    <div class="note">
+      <h3>Method and limits</h3>
+      <ul id="gap-method"></ul>
+    </div>
+    <details class="plain">
+      <summary>Show the numbers</summary>
+      <div id="gap-table" class="tablewrap"></div>
+    </details>
+    <details class="plain">
+      <summary>Pair-by-pair overlap statements</summary>
+      <div id="gap-pairs"></div>
+    </details>
+  </section>
+
+  <section id="p-acc" role="tabpanel" aria-labelledby="t-acc" hidden>
+    <h2 class="big">How often is the checker right about a claim?</h2>
+    <p id="acc-short" class="short"></p>
+    <p id="acc-lede" class="lede"></p>
+    <div id="acc-sets" class="sets"></div>
+    <div id="acc-injected" class="injected"></div>
+    <div id="acc-miss" class="miss"></div>
+    <div id="acc-qa" class="note"></div>
+    <div class="note">
+      <h3>How to read these numbers</h3>
+      <ul id="acc-method"></ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Cases are synthetic: every person, organisation and number is invented, and nothing here is medical or coverage advice. Coverage rules follow the public <a href="https://www.medicare.gov/coverage/durable-medical-equipment-dme-coverage" rel="noopener">Medicare DME page</a>.</p>
+    <p>Benchmark figures come from the <a href="https://www.callbaba.com/bench/" rel="noopener">BabaBench results page</a>. The local model was Qwen3 8B (Apache-2.0) run with Ollama on a laptop. This site makes no model calls and needs no key.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

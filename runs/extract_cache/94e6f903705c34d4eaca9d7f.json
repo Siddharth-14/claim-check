@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Evergreen: the order they have on file expired last month.", "kind": "action", "entity": "check_order", "asserted_state": "performed"}, {"claim_text": "the order they have on file expired last month", "kind": "state", "entity": "supplier.order_on_file", "asserted_state": "false"}]

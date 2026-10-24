@@ -1,0 +1,1 @@
+[{"claim_text": "Maya told what she owes", "kind": "outcome", "entity": "patient_informed_cost", "asserted_state": "true"}, {"claim_text": "ride booked", "kind": "outcome", "entity": "ride_booked", "asserted_state": "true"}]

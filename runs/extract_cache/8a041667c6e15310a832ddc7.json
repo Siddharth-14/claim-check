@@ -1,0 +1,1 @@
+[{"claim_text": "Ruth has been told what she will owe", "kind": "outcome", "entity": "patient_informed_cost", "asserted_state": "true"}, {"claim_text": "walker ordered from the supplier", "kind": "outcome", "entity": "walker_ordered", "asserted_state": "true"}]

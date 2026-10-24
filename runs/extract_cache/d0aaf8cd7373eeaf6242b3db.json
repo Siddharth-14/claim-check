@@ -1,0 +1,1 @@
+[{"claim_text": "I haven't been able to confirm that the prescription has been filled yet", "kind": "state", "entity": "rx_filled", "asserted_state": "false"}, {"claim_text": "I will need to follow up with Corner Pharmacy to check the status", "kind": "action", "entity": "wait_fill", "asserted_state": "not_performed"}]

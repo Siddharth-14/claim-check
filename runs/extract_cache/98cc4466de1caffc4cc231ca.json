@@ -1,0 +1,1 @@
+[{"claim_text": "I asked Dr. Okafor's office", "kind": "action", "entity": "request_order", "asserted_state": "performed"}, {"claim_text": "they issued a walker order for home use", "kind": "outcome", "entity": "order_received", "asserted_state": "true"}]

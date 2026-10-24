@@ -1,0 +1,1 @@
+[{"claim_text": "Hal has agreed to switch", "kind": "outcome", "entity": "patient_consented", "asserted_state": "true"}, {"claim_text": "home setup scheduled with the new supplier", "kind": "outcome", "entity": "setup_scheduled", "asserted_state": "true"}]
