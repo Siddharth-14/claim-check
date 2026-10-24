@@ -151,6 +151,15 @@
       res.appendChild(h("span", { class: "pass", text: "This run passes all 4 checks." }));
       res.appendChild(h("small", { text: "Every claim the agent made is backed by the log." }));
     }
+    var ex = $("exhibit"); ex.textContent = "";
+    var key = r.claims.filter(function (c) { return c.verdict === "contradicted"; })[0] || r.claims.filter(function (c) { return c.verdict === "unsupported" && !c.unmapped; })[0];
+    if (key) {
+      ex.hidden = false;
+      var parts = key.log_line.split(" ");
+      ex.appendChild(h("div", { class: "chip-line" }, h("span", { class: "chip v-" + key.verdict }, icon(key.verdict), h("span", { text: key.verdict === "contradicted" ? "Contradicted by the log" : "Not backed by the log" }))));
+      ex.appendChild(h("p", { class: "said", text: "The agent said: \u201C" + displayText(key) + "\u201D" }));
+      ex.appendChild(h("pre", { class: "tape" }, h("b", { text: parts[0] }), " " + parts.slice(1).join(" ")));
+    } else ex.hidden = true;
     var sc = $("scorecard"); sc.textContent = "";
     CRITERIA.forEach(function (c) {
       var ok = r.scores[c[0]].pass;

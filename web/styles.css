@@ -78,6 +78,12 @@ select {
 .result .pass { color: var(--ok); }
 .result small { display: block; font: 400 14px/1.4 var(--sans); color: var(--ink-2); margin-top: 2px; }
 
+.exhibit { background: var(--card); border: 1px solid var(--rule); border-left: 6px solid var(--bad); border-radius: 8px; padding: 10px 12px; margin: 0 0 12px; max-width: 760px; }
+.exhibit .said { margin: 6px 0 6px; }
+.exhibit .chip { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 13px; padding: 2px 9px 2px 6px; border-radius: 99px; }
+.exhibit .chip.v-contradicted { background: var(--bad-bg); color: var(--bad); }
+.exhibit .chip.v-unsupported { background: var(--unk-bg); color: var(--unk); }
+.exhibit .chip svg { width: 14px; height: 14px; }
 .scorecard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
 .score { background: var(--card); border: 1px solid var(--rule); border-top: 5px solid var(--ok); border-radius: 8px; padding: 10px 12px; min-width: 0; }
 .score.fail { border-top-color: var(--bad); background: #fff; }
