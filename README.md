@@ -2,7 +2,7 @@
 
 **Independent project, not affiliated with Baba.** It is inspired by the public [BabaBench results page](https://www.callbaba.com/bench/); no BabaBench tasks, graded outcomes, branding or logos are used. All cases here are synthetic and written for this project.
 
-Live demo: DEMO_URL_PLACEHOLDER
+Live demo: https://claim-check-audit.netlify.app
 
 ## The problem
 
