@@ -22,14 +22,14 @@ def slim(e, name, title, note):
 
 
 v1 = json.load(open(ROOT / "eval/results_v1_dev24.json"))
-v2 = json.load(open(ROOT / "eval/results_v2_dev24.json"))
-ho = json.load(open(ROOT / "eval/results_v2_heldout.json"))
+v2 = json.load(open(ROOT / "eval/results_v3_dev24.json"))
+ho = json.load(open(ROOT / "eval/results_v3_heldout.json"))
 qa = list(csv.DictReader(open(ROOT / "eval/sample_qa.csv")))
 bad = [r for r in qa if r["extraction_ok"] == "no"]
 sets = [
     slim(v1, "dev24_v1", "First checker, 24 dev runs", "12 scripted failures + 12 local-model runs. This is the checker as it stood when the labels were frozen."),
-    slim(v2, "dev24_v2", "Fixed checker, same 24 runs", "The 4 fixes were chosen after looking at these runs' errors, so this score is optimistic."),
-    slim(ho, "heldout_v2", "Fixed checker, 18 held-out runs", "Local-model runs not used to tune anything. Labelled after the checker was final. Only 3 false claims, so intervals are wide."),
+    slim(v2, "dev24_v3", "Final checker, same 24 runs", "The fixes were chosen after looking at these runs' errors, so this score is optimistic."),
+    slim(ho, "heldout_v3", "Final checker, 18 held-out runs", "Local-model runs not used to choose the first fixes. I read this set's false alarms before the last two fixes, so it is not perfectly clean. Only 3 false claims, so intervals are wide."),
 ]
 sets[0]["n_runs_labelled"] = sets[1]["n_runs_labelled"] = 24
 sets[2]["n_runs_labelled"] = 18

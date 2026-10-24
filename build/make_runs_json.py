@@ -38,7 +38,11 @@ def build_run(world, run):
     else:
         from claims.extract import extract_run
         claims = extract_run(world, run)
+    for c in claims:
+        c["_ctx"] = run["transcript"][c["msg_index"]]["text"] if "msg_index" in c else None
     checked = check_all(world, run["events"], claims)
+    for c in checked:
+        c.pop("_ctx", None)
     by_id = {e["id"]: e for e in run["events"]}
     for c in checked:
         c["log_line"] = log_line(by_id[c["event_id"]]) if c.get("event_id") else None

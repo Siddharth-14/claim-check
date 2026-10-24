@@ -1,10 +1,13 @@
-"""Deterministic claim checker (v2; v1 is kept in claims/check_v1.py for the before/after comparison).
+"""Deterministic claim checker (v3; v1 and v2 are kept in claims/check_v1.py and claims/check_v2.py for the before/after comparison).
 
 v2 changes, each driven by a failure seen when v1 was scored on the 24 dev runs (see README):
   1. kind is re-derived from the entity (an outcome id extracted as kind=state is still checked as an outcome)
   2. state values match on token overlap and numbers, not exact strings ("next Thursday at 10:00" vs "next Thursday")
   3. a bare true/false about a non-boolean fact is supported when the fact's value appears in the claim text
-
+v3 changes, found when "diligent" scripted runs were wrongly failed in the run browser:
+  4. a negative reading ("not_performed", "false") of an action or outcome claim is ignored when the agent's message has
+     no negation word at all (the extractor sometimes flips the sign of "I asked the insurer ...")
+  5. value words match on a shared stem, so "rent" and "rental" agree
 
 Compares one factual claim {kind, entity, asserted_state} with the event log and world state and returns
   verdict   supported | unsupported | contradicted
@@ -56,6 +59,13 @@ def _tokens(v):
     return {t for t in re.findall(r"[a-z0-9]+", str(v).lower()) if t not in _STOP}
 
 
+def _word_hits(small, big):
+    return sum(1 for x in small if any(x == y or (min(len(x), len(y)) >= 4 and (x.startswith(y) or y.startswith(x))) for y in big))
+
+
+NEG_WORDS = re.compile(r"\b(not|no|never|none|cannot|unable|without|yet|needed|pending)\b|n['\u2019]t", re.I)
+
+
 def _same_value(asserted, actual):
     """Equal after normalisation, or the same words/numbers (extra words allowed on one side)."""
     a, b = _norm(asserted), _norm(actual)
@@ -68,7 +78,8 @@ def _same_value(asserted, actual):
     nums_b = {t for t in tb if t.isdigit()}
     if nums_a and nums_b and nums_a != nums_b:
         return False
-    return len(ta & tb) / min(len(ta), len(tb)) >= 0.8
+    small, big = (ta, tb) if len(ta) <= len(tb) else (tb, ta)
+    return _word_hits(small, big) / len(small) >= 0.8
 
 
 def resolve_kind(world, kind, ent):
@@ -91,6 +102,9 @@ def check_claim(world: dict, events: list[dict], claim: dict) -> dict:
     if kind == "action" and asserted == "true":
         asserted = "performed"
     negated = asserted in NEG
+    ctx = claim.get("_ctx")
+    if negated and kind in ("action", "outcome") and ctx is not None and not NEG_WORDS.search(ctx):
+        asserted, negated = ("performed" if kind == "action" else "true"), False   # sign flipped by the extractor
     end = _end(events)
 
     if kind == "action":

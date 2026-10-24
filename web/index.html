@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0f1b2a">
 <title>Claim Check</title>
 <meta name="description" content="Checks whether what an AI patient-advocacy agent says it did matches the log of what actually happened in a simulated case.">
 <link rel="stylesheet" href="styles.css">
@@ -25,9 +27,9 @@
 <div class="tabbar">
   <div class="wrap">
     <div class="tabs" role="tablist" aria-label="Sections">
-      <button role="tab" id="t-audit" aria-controls="p-audit" aria-selected="true">Audit a run</button>
-      <button role="tab" id="t-gap" aria-controls="p-gap" aria-selected="false" tabindex="-1">Is the gap real?</button>
-      <button role="tab" id="t-acc" aria-controls="p-acc" aria-selected="false" tabindex="-1">Checker accuracy</button>
+      <button type="button" role="tab" id="t-audit" aria-controls="p-audit" aria-selected="true">Audit a run</button>
+      <button type="button" role="tab" id="t-gap" aria-controls="p-gap" aria-selected="false" tabindex="-1">Is the gap real?</button>
+      <button type="button" role="tab" id="t-acc" aria-controls="p-acc" aria-selected="false" tabindex="-1">Checker accuracy</button>
     </div>
   </div>
 </div>
@@ -35,6 +37,7 @@
 <main id="main" class="wrap">
 
   <section id="p-audit" role="tabpanel" aria-labelledby="t-audit">
+    <h2 class="sr-only">Audit a run</h2>
     <div class="casebar">
       <label>Case
         <select id="sel-world"></select>
@@ -45,9 +48,22 @@
       <p id="agent-note" class="agent-note"></p>
     </div>
 
-    <div id="result" class="result" aria-live="polite"></div>
-    <div id="exhibit" class="exhibit"></div>
-    <div id="scorecard" class="scorecard" role="list" aria-label="Four grading criteria"></div>
+    <details class="matrix" id="matrix-wrap">
+      <summary id="matrix-sum">Browse all runs</summary>
+      <div id="matrix" class="matrix-body"></div>
+    </details>
+
+    <div class="hero">
+      <div class="hero-main">
+        <div id="result" class="result" aria-live="polite"></div>
+        <div id="strip" class="strip"></div>
+        <div id="exhibit" class="exhibit"></div>
+      </div>
+      <aside class="hero-side" aria-labelledby="h-score">
+        <h2 id="h-score" class="sr-only">Scorecard</h2>
+        <div id="scorecard" class="scorecard" role="list" aria-label="Four grading criteria"></div>
+      </aside>
+    </div>
 
     <div class="panes">
       <section class="pane ledger-pane" aria-labelledby="h-ledger">
@@ -58,7 +74,7 @@
       <section class="pane transcript-pane" aria-labelledby="h-transcript">
         <h2 id="h-transcript">Transcript</h2>
         <p class="hint">Underlined text is a claim the checker could not support.</p>
-        <div id="transcript"></div>
+        <div id="transcript" class="well" tabindex="0" role="region" aria-labelledby="h-transcript"></div>
       </section>
     </div>
   </section>
@@ -103,7 +119,7 @@
 <footer class="foot">
   <div class="wrap">
     <p>Cases are synthetic: every person, organisation and number is invented, and nothing here is medical or coverage advice. Coverage rules follow the public <a href="https://www.medicare.gov/coverage/durable-medical-equipment-dme-coverage" rel="noopener">Medicare DME page</a>.</p>
-    <p>Benchmark figures come from the <a href="https://www.callbaba.com/bench/" rel="noopener">BabaBench results page</a>. The local model was Qwen3 8B (Apache-2.0) run with Ollama on a laptop. This site makes no model calls and needs no key.</p>
+    <p>Benchmark figures come from the <a href="https://www.callbaba.com/bench/" rel="noopener">BabaBench results page</a>. The local model was Qwen3&nbsp;8B (Apache-2.0) run with Ollama on a laptop. This site makes no model calls and needs no key.</p>
   </div>
 </footer>
 

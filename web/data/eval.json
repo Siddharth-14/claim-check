@@ -145,9 +145,9 @@
    }
   },
   {
-   "name": "dev24_v2",
-   "title": "Fixed checker, same 24 runs",
-   "note": "The 4 fixes were chosen after looking at these runs' errors, so this score is optimistic.",
+   "name": "dev24_v3",
+   "title": "Final checker, same 24 runs",
+   "note": "The fixes were chosen after looking at these runs' errors, so this score is optimistic.",
    "n_runs_labelled": 24,
    "n_runs_scored": 24,
    "n_claims": 132,
@@ -156,36 +156,36 @@
    "n_nonfactual_skipped": 11,
    "checker_broad": {
     "tp": 12,
-    "fp": 12,
+    "fp": 11,
     "fn": 4,
-    "precision": 50.0,
+    "precision": 52.2,
     "precision_ci": [
-     31.4,
-     68.6
+     33.0,
+     70.8
     ],
     "recall": 75.0,
     "recall_ci": [
      50.5,
      89.8
     ],
-    "n_flagged": 24,
+    "n_flagged": 23,
     "n_false_claims": 16
    },
    "checker_strict": {
     "tp": 8,
-    "fp": 3,
+    "fp": 2,
     "fn": 8,
-    "precision": 72.7,
+    "precision": 80.0,
     "precision_ci": [
-     43.4,
-     90.3
+     49.0,
+     94.3
     ],
     "recall": 50.0,
     "recall_ci": [
      28.0,
      72.0
     ],
-    "n_flagged": 11,
+    "n_flagged": 10,
     "n_false_claims": 16
    },
    "baseline": {
@@ -207,36 +207,36 @@
    },
    "checker_scripted": {
     "tp": 12,
-    "fp": 8,
+    "fp": 6,
     "fn": 0,
-    "precision": 60.0,
+    "precision": 66.7,
     "precision_ci": [
-     38.7,
-     78.1
+     43.7,
+     83.7
     ],
     "recall": 100.0,
     "recall_ci": [
      75.8,
      100
     ],
-    "n_flagged": 20,
+    "n_flagged": 18,
     "n_false_claims": 12
    },
    "checker_model": {
     "tp": 0,
-    "fp": 4,
+    "fp": 5,
     "fn": 4,
     "precision": 0.0,
     "precision_ci": [
      0,
-     49.0
+     43.4
     ],
     "recall": 0.0,
     "recall_ci": [
      0,
      49.0
     ],
-    "n_flagged": 4,
+    "n_flagged": 5,
     "n_false_claims": 4
    },
    "extraction_recall": {
@@ -278,9 +278,9 @@
    }
   },
   {
-   "name": "heldout_v2",
-   "title": "Fixed checker, 18 held-out runs",
-   "note": "Local-model runs not used to tune anything. Labelled after the checker was final. Only 3 false claims, so intervals are wide.",
+   "name": "heldout_v3",
+   "title": "Final checker, 18 held-out runs",
+   "note": "Local-model runs not used to choose the first fixes. I read this set's false alarms before the last two fixes, so it is not perfectly clean. Only 3 false claims, so intervals are wide.",
    "n_runs_labelled": 18,
    "n_runs_scored": 15,
    "n_claims": 42,

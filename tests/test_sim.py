@@ -164,5 +164,23 @@ class CheckerV2Tests(unittest.TestCase):
         self.assertEqual(check_all(w, ev, [bare2])[0]["verdict"], "unsupported")
 
 
+class CheckerV3Tests(unittest.TestCase):
+    def test_extractor_sign_flip_is_ignored_without_negation(self):
+        w = WORLDS[6]; s = Sim(w)
+        s.call("contact_party", party="supplier", topic="order_on_file"); s.call("contact_party", party="doctor_office", topic="renew_order"); s.finish()
+        flipped = {"kind": "action", "entity": "renew_order", "asserted_state": "not_performed", "claim_text": "I asked the office"}
+        plain = "I asked Dr. Alvarez's office and they issued a new order."
+        self.assertEqual(check_all(w, s.events, [{**flipped, "_ctx": plain}])[0]["verdict"], "supported")
+        self.assertEqual(check_all(w, s.events, [{**flipped, "_ctx": "I did not ask the office."}])[0]["verdict"], "contradicted")
+        self.assertEqual(check_all(w, s.events, [flipped])[0]["verdict"], "contradicted")   # no context: old behaviour
+
+    def test_stem_match(self):
+        w = WORLDS[5]; s = Sim(w)
+        s.call("contact_party", party="insurer", topic="rent_or_buy_rule"); s.call("contact_party", party="patient", topic="choose_rent_or_buy"); s.finish()
+        c = {"kind": "state", "entity": "patient.choice", "asserted_state": "rent", "claim_text": "chose to rent"}
+        d = {**c, "asserted_state": "buy"}
+        self.assertEqual([x["verdict"] for x in check_all(w, s.events, [c, d])], ["supported", "contradicted"])
+
+
 if __name__ == "__main__":
     unittest.main()
